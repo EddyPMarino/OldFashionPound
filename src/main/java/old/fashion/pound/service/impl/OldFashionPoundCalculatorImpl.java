@@ -5,8 +5,20 @@ import old.fashion.pound.utils.ConvertPound;
 import old.fashion.pound.utils.ValidatePound;
 import org.springframework.stereotype.Service;
 
+/**
+ * Implementation of the OldFashionPoundCalculator interface.
+ */
 @Service
 public class OldFashionPoundCalculatorImpl implements OldFashionPoundCalculator {
+
+    /**
+     * Adds two pound values.
+     *
+     * @param addend1 the first addend in pound format
+     * @param addend2 the second addend in pound format
+     * @return the sum of the two addends in pound format
+     * @throws IllegalArgumentException if any of the addends are invalid
+     */
     @Override
     public String add(String addend1, String addend2) {
         validate(addend1);
@@ -18,6 +30,14 @@ public class OldFashionPoundCalculatorImpl implements OldFashionPoundCalculator 
         return poundSum;
     }
 
+    /**
+     * Subtracts the second pound value from the first.
+     *
+     * @param subtrahend1 the value to be subtracted from in pound format
+     * @param subtrahend2 the value to subtract in pound format
+     * @return the difference in pound format
+     * @throws IllegalArgumentException if any of the subtrahends are invalid
+     */
     @Override
     public String subtract(String subtrahend1, String subtrahend2) {
         validate(subtrahend1);
@@ -29,6 +49,14 @@ public class OldFashionPoundCalculatorImpl implements OldFashionPoundCalculator 
         return poundDiff;
     }
 
+    /**
+     * Multiplies a pound value by an integer.
+     *
+     * @param multiplicand1 the pound value to be multiplied
+     * @param multiplicand2 the integer multiplier
+     * @return the product in pound format
+     * @throws IllegalArgumentException if the multiplicand is invalid
+     */
     @Override
     public String multiply(String multiplicand1, Integer multiplicand2) {
         validate(multiplicand1);
@@ -38,6 +66,14 @@ public class OldFashionPoundCalculatorImpl implements OldFashionPoundCalculator 
         return poundMult;
     }
 
+    /**
+     * Divides a pound value by an integer.
+     *
+     * @param dividend1 the pound value to be divided
+     * @param dividend2 the integer divisor
+     * @return the quotient and remainder in pound format
+     * @throws IllegalArgumentException if the dividend is invalid
+     */
     @Override
     public String divide(String dividend1, Integer dividend2) {
         validate(dividend1);
@@ -49,6 +85,12 @@ public class OldFashionPoundCalculatorImpl implements OldFashionPoundCalculator 
         return divPound + remainingPound;
     }
 
+    /**
+     * Validates the pound value.
+     *
+     * @param pound the pound value to be validated
+     * @throws IllegalArgumentException if the pound value is invalid
+     */
     private void validate(String pound) {
         if (!ValidatePound.isValid(pound)) {
             throw new IllegalArgumentException("Invalid pound");
