@@ -1,6 +1,8 @@
 # OldFashionPound
 
-OldFashionPound is a Java library that implements the four basic arithmetic operations (addition, subtraction, multiplication, and division) for prices according to the pre-decimalization British currency system (1 pound = 20 shillings, 1 shilling = 12 pence).
+OldFashionPound is a Java library that implements the four basic arithmetic operations (addition, subtraction,
+multiplication, and division) for prices according to the pre-decimalization British currency system (1 pound = 20
+shillings, 1 shilling = 12 pence).
 
 ## Table of Contents
 
@@ -17,7 +19,7 @@ To include OldFashionPound in your project, add the following dependency to your
 ```xml
 <dependency>
     <groupId>org.interviews</groupId>
-    <artifactId>oldFashionPound</artifactId>
+    <artifactId>old-fashion-pound</artifactId>
     <version>0.0.1-SNAPSHOT</version>
 </dependency>
 ```
@@ -86,28 +88,33 @@ public class FooImpl implements Foo {
 ## Examples
 
 **Addition**
+
 ```java
 String result = calculator.add("5p 17s 8d", "3p 4s 10d");
 // result: "9p 2s 6d"
 ```
 
 **Subtraction**
+
 ```java
 String result = calculator.subtract("5p 17s 8d", "3p 4s 10d");
 // result: "2p 12s 10d"
 ```
 
 **Multiplication**
+
 ```java
 String result = calculator.multiply("5p 17s 8d", 2);
 // result: "11p 15s 4d"
 ```
 
 **Division**
+
 ```java
 String result = calculator.divide("5p 17s 8d", 3);
 // result: "1p 19s 2d (2d)"
 ```
 
 ## License
+
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
